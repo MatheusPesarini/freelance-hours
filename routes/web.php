@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'projects.index')->name('projects.index');
+Route::get('/', [ProjectsController::class, 'index'])->name('projects.index');
 
-Route::view('/project/{project}', 'about')->name('about');
+Route::get('/project/{project}', [ProjectsController::class, 'show'])->name('projects->show');
